@@ -1,0 +1,37 @@
+function ObjetoAbstrato(nome, atributo, descricao) {
+    this.nome = nome;
+    this.atributo = atributo;
+    this.descricao = descricao;
+}
+
+// Adicionando métodos ao protótipo do construtor
+ObjetoAbstrato.prototype.exibirInformacoes = function () {
+    console.log(`Nome: ${this.nome}`);
+    console.log(`Atributo: ${this.atributo}`);
+    console.log(`Descrição: ${this.descricao}`);
+};
+
+ObjetoAbstrato.prototype.modificarAtributo = function (novoAtributo) {
+    this.atributo = novoAtributo;
+    console.log(`${this.nome}: Atributo modificado para ${novoAtributo}`);
+};
+
+ObjetoAbstrato.prototype.descreverUso = function () {
+    console.log(`${this.nome} é utilizado para ${this.descricao.toLowerCase()}.`);
+};
+
+// Criando instâncias da classe ObjetoAbstrato
+let objeto1 = new ObjetoAbstrato("Objeto1", "Resistência", "Objeto resistente e durável");
+let objeto2 = new ObjetoAbstrato("Objeto2", "Condução elétrica", "Objeto que conduz eletricidade");
+let objeto3 = new ObjetoAbstrato("Objeto3", "Flexibilidade", "Objeto maleável e flexível");
+
+// Utilizando os métodos e atributos
+objeto1.exibirInformacoes();
+objeto1.modificarAtributo("Tenacidade");
+objeto1.descreverUso();
+
+objeto2.exibirInformacoes();
+objeto2.descreverUso();
+
+objeto3.exibirInformacoes();
+objeto3.modificarAtributo("Rigidez");
